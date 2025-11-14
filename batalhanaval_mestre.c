@@ -79,11 +79,10 @@ void gerar_octaedro(int n, int m[n][n]) {
     }
 }
 
-// ---------------------------------------------------------
 // Função: aplicar_habilidade
 // Sobrepõe uma matriz de habilidade no tabuleiro,
 // posicionando pelo ponto de origem informado.
-// ---------------------------------------------------------
+
 void aplicar_habilidade(int tab[TAM][TAM], int n, int masc[n][n],
                         int origem_linha, int origem_coluna) {
 
@@ -124,29 +123,30 @@ int main() {
     //    Dois horizontais/verticais + dois diagonais
     // ---------------------------------------------------------
 
-    // Navio horizontal (linha 2)
-    tab[1][1] = NAVIO;
-    tab[1][2] = NAVIO;
-    tab[1][3] = NAVIO;
+    // Navio 1 (horizontal) linha 5, colunas 1, 2, 3
+    tab[4][1] = NAVIO;
+    tab[4][2] = NAVIO;
+    tab[4][3] = NAVIO;
 
-    // Navio vertical (coluna 7)
+    // Navio 2 (vertical) linhas 6, 7, 8, coluna H
     tab[5][7] = NAVIO;
     tab[6][7] = NAVIO;
     tab[7][7] = NAVIO;
 
-    // Navio diagonal ↘
+    // Navio 3 (diagonal principal) da esquerda para a direita
+    // começa em (0,0)
     tab[0][5] = NAVIO;
     tab[1][6] = NAVIO;
     tab[2][7] = NAVIO;
 
-    // Navio diagonal ↙
+    // Navio 4 (diagonal inversa) da direita para a esquerda
+    // começa em (0,9)
     tab[9][2] = NAVIO;
     tab[8][3] = NAVIO;
     tab[7][4] = NAVIO;
 
-    // ---------------------------------------------------------
     // 3) Criar matrizes das habilidades (cone, cruz, octaedro)
-    // ---------------------------------------------------------
+
     int tamanho = 5; // Pode ser 5 ou 7
     int cone[tamanho][tamanho];
     int cruz[tamanho][tamanho];
@@ -156,23 +156,20 @@ int main() {
     gerar_cruz(tamanho, cruz);
     gerar_octaedro(tamanho, octa);
 
-    // ---------------------------------------------------------
     // 4) Definir pontos de origem das habilidades
-    // ---------------------------------------------------------
+
     int origem_cone_l = 4, origem_cone_c = 1;
     int origem_cruz_l = 8, origem_cruz_c = 0;
     int origem_octa_l = 3, origem_octa_c = 8;
 
-    // ---------------------------------------------------------
     // 5) Aplicar habilidades no tabuleiro
-    // ---------------------------------------------------------
+
     aplicar_habilidade(tab, tamanho, cone, origem_cone_l, origem_cone_c);
     aplicar_habilidade(tab, tamanho, cruz, origem_cruz_l, origem_cruz_c);
     aplicar_habilidade(tab, tamanho, octa, origem_octa_l, origem_octa_c);
 
-    // ---------------------------------------------------------
     // 6) Exibir tabuleiro final
-    // ---------------------------------------------------------
+
     imprimir_tabuleiro(tab);
 
     return 0;

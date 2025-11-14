@@ -33,15 +33,15 @@ int main() {
 
     // Navio 3 (diagonal principal) da esquerda para a direita
     // começa em (0,0)
-    tabuleiro[0][0] = 3;
-    tabuleiro[1][1] = 3; 
-    tabuleiro[2][2] = 3;
+    tabuleiro[0][5] = 3;
+    tabuleiro[1][6] = 3; 
+    tabuleiro[2][7] = 3;
 
     // Navio 4 (diagonal inversa) da direita para a esquerda
     // começa em (0,9)
-    tabuleiro[0][9] = 3;
-    tabuleiro[1][8] = 3;
-    tabuleiro[2][7] = 3;
+    tabuleiro[9][2] = 3;
+    tabuleiro[8][3] = 3;
+    tabuleiro[7][4] = 3;
 
     printf("=== TABULEIRO BATALHA NAVAL ===\n");
     printf("0 = Agua, 3 = Navio\n\n");
