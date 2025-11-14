@@ -7,6 +7,7 @@ Descrição:
 Este programa cria um tabuleiro 10x10 de Batalha Naval,
 posiciona quatro navios (dois horizontais/verticais e dois diagonais)
 e exibe o tabuleiro no console.
+
 */
 
 int main() {
